@@ -4,8 +4,8 @@
 # Guide: https://networkdoodles.com/labs/wireshark-101/task-8-1/
 
 # Follow along
-retransmissions:
-retransmitted_by:     # the IP address that had to send again
+retransmissions: 26
+retransmitted_by: 192.168.2.10 # the IP address that had to send again
 
 # Challenge
-dup_acks:
+dup_acks: 142
