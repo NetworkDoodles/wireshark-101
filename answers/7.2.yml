@@ -1,0 +1,12 @@
+# Task 7.2 · decrypt your own
+# Write each answer after its colon, save the file, then run:  make check T=7.2
+# The capture: make capture AT=laptop:eth1 NAME=7.2 X=tls12
+# Guide: https://networkdoodles.com/labs/wireshark-101/task-7-2/
+
+# Follow along
+tls_version:
+cert_cn:              # the name the certificate is for
+cert_issuer:          # who signed it
+
+# Challenge
+secret:               # the answer in secret.txt, once you've decrypted it

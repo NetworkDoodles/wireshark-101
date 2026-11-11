@@ -1,0 +1,11 @@
+# made by the lab, never committed
+.venv/
+__pycache__/
+# your captures and session keys
+captures/*
+!captures/.gitkeep
+# what make break did
+lab/.state/
+# containerlab's own state for a running lab
+lab/clab-*/
+clab-*/

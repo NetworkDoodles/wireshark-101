@@ -1,0 +1,12 @@
+# Task 5.1 · names and answers
+# Write each answer after its colon, save the file, then run:  make check T=5.1
+# The capture: make capture AT=laptop:eth1 NAME=5.1 X=dns
+# Guide: https://networkdoodles.com/labs/wireshark-101/task-5-1/
+
+# Follow along
+web_ip:
+ttl:                  # of web.lab's answer, in seconds
+
+# Challenge
+cname_target:         # the name intranet.lab is an alias for
+nxdomain_name:

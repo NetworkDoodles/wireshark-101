@@ -1,0 +1,11 @@
+# Task 2.2 · capture filters
+# Write each answer after its colon, save the file, then run:  make check T=2.2
+# The capture: make capture AT=laptop:eth1 NAME=2.2 X=mixed F="udp port 53"
+# Guide: https://networkdoodles.com/labs/wireshark-101/task-2-2/
+
+# Follow along
+dns_frames:           # how many frames the capture filter kept
+
+# Challenge: a capture filter (BPF) after each colon
+bpf_https_web:
+bpf_laptop_not_arp:

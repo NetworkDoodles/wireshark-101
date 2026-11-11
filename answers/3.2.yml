@@ -1,0 +1,11 @@
+# Task 3.2 · two answers
+# Write each answer after its colon, save the file, then run:  make check T=3.2
+# The capture: make capture AT=laptop:eth1 NAME=3.2 X=dupip
+# Guide: https://networkdoodles.com/labs/wireshark-101/task-3-2/
+
+# Follow along
+duplicate_ip:
+impostor_mac:         # the MAC address that answered and isn't the printer's
+
+# Challenge
+gratuitous_mac:       # who announced the address without being asked

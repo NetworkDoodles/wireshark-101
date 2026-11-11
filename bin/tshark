@@ -1,0 +1,16 @@
+#!/bin/sh
+# tshark, Wireshark's command-line twin, from the lab's tool image (tshark 4.6, the same dissectors as the
+# desktop Wireshark). Works on any file under /workspaces, from wherever you run it:
+#   tshark -r captures/1.1.pcapng
+#   tshark -r captures/1.1.pcapng -Y 'icmp' -V
+img=nd-shark:1
+docker image inspect "$img" >/dev/null 2>&1 || { echo "tshark's image isn't built yet: run  make images" >&2; exit 2; }
+here=$(pwd)
+case "$here" in
+  /workspaces/*) mounts="-v /workspaces:/workspaces" ;;
+  *) mounts="-v /workspaces:/workspaces -v $here:$here" ;;
+esac
+[ -d /workspaces ] || mounts="-v $here:$here"
+tty=""; [ -t 1 ] && [ -t 0 ] && tty="-t"
+# shellcheck disable=SC2086
+exec docker run --rm -i $tty -u "$(id -u):$(id -g)" $mounts -w "$here" "$img" "$@"

@@ -1,0 +1,12 @@
+# Task 6.1 · a whole connection
+# Write each answer after its colon, save the file, then run:  make check T=6.1
+# The capture: make capture AT=laptop:eth1 NAME=6.1 X=web
+# Guide: https://networkdoodles.com/labs/wireshark-101/task-6-1/
+
+# Follow along
+client_port:
+syn_ack_frame:        # its frame number, the No. column
+
+# Challenge
+http_status:
+first_fin_from:       # the IP address that sent the first FIN

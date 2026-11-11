@@ -1,0 +1,13 @@
+# Task 2.1 · display filters
+# Write each answer after its colon, save the file, then run:  make check T=2.1
+# The capture: nothing to capture: try each filter on pcaps/mixed.pcapng
+# Guide: https://networkdoodles.com/labs/wireshark-101/task-2-1/
+
+# Follow along: a display filter after each colon, no quotes needed
+dns:
+printer:
+not_web:
+
+# Challenge
+laptop_dns_or_arp:
+syn_only:

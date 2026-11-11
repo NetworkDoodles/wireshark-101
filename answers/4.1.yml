@@ -1,0 +1,13 @@
+# Task 4.1 · DORA
+# Write each answer after its colon, save the file, then run:  make check T=4.1
+# The capture: make capture AT=laptop:eth1 NAME=4.1 X=dhcp
+# Guide: https://networkdoodles.com/labs/wireshark-101/task-4-1/
+
+# Follow along: from the Offer
+offered_ip:
+server_id:            # option 54
+lease_seconds:
+
+# Challenge
+router:
+dns_server:

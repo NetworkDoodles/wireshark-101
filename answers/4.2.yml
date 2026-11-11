@@ -1,0 +1,12 @@
+# Task 4.2 · the relay
+# Write each answer after its colon, save the file, then run:  make check T=4.2
+# The capture: make capture AT=sw1:eth1,r1:eth2 NAME=4.2 X=dhcp
+# Guide: https://networkdoodles.com/labs/wireshark-101/task-4-2/
+
+# Follow along: the Discover
+lan_dst:              # its destination IP on sw1:eth1
+relay_dst:            # its destination IP on r1:eth2
+
+# Challenge
+giaddr:               # the Relay agent IP address in r1's copy
+offer_from:           # the Offer's source IP, on sw1:eth1

@@ -1,0 +1,11 @@
+# Task 8.1 · loss
+# Write each answer after its colon, save the file, then run:  make check T=8.1
+# The capture: make break X=loss, then  make capture AT=laptop:eth1 NAME=8.1 X=big
+# Guide: https://networkdoodles.com/labs/wireshark-101/task-8-1/
+
+# Follow along
+retransmissions:
+retransmitted_by:     # the IP address that had to send again
+
+# Challenge
+dup_acks:

@@ -1,0 +1,12 @@
+# Task 3.1 · who has?
+# Write each answer after its colon, save the file, then run:  make check T=3.1
+# The capture: make capture AT=laptop:eth1 NAME=3.1 X=arp
+# Guide: https://networkdoodles.com/labs/wireshark-101/task-3-1/
+
+# Follow along
+printer_mac:
+request_dst_mac:      # the destination MAC of the laptop's ARP request
+
+# Challenge
+asked_for_web:        # the IP address the laptop asked ARP about, to reach web
+gateway_mac:

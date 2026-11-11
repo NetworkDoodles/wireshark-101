@@ -1,0 +1,12 @@
+# Task 7.1 · what TLS shows
+# Write each answer after its colon, save the file, then run:  make check T=7.1
+# The capture: make capture AT=laptop:eth1 NAME=7.1 X=tls
+# Guide: https://networkdoodles.com/labs/wireshark-101/task-7-1/
+
+# Follow along
+sni:                  # both names, separated by a comma
+tls_version:          # the version the server chose, like 1.2
+
+# Challenge
+cipher:               # its name or its number
+offered_alpn:         # what the laptop offered, separated by commas

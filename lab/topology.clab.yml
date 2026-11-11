@@ -1,0 +1,78 @@
+# The lab, in containerlab: the Networking 101 home network, set up so there's something to watch.
+#
+#   laptop ────┐
+#   printer ───┼── sw1 ── r1 ════ 10.0.0.0/30 ════ r2 ──┬── web  192.168.2.10/28   HTTP and HTTPS
+#   broken-pc ─┘     192.168.1.0/24                     └── dns  192.168.2.53/28   DNS and DHCP
+#
+# sw1, r1 and r2 run CapeOS Bolt (a lab network OS with an IOS-style CLI); the five hosts are small Linux
+# computers (lab/host/). containerlab names ports by their Linux names: eth1 is GigabitEthernet1.
+# Every one of those ports can be captured:  make capture AT=laptop:eth1   (make ports lists them all)
+name: ws101
+prefix: ""                          # containers are named after the nodes
+
+mgmt:
+  network: ws101-mgmt
+  ipv4-subnet: 172.80.102.0/24
+
+topology:
+  kinds:
+    linux:
+      image: nd-wshost:1
+  nodes:
+    sw1:
+      kind: linux
+      image: ghcr.io/dkhenderson2/capeos-bolt:0.11.0
+      env: { CAPEOS_PLATFORM: switch, CAPEOS_USER: admin, CAPEOS_PASSWORD: capeos-lab }
+      binds: [configs/sw1.cfg:/flash/startup-config:ro]
+    r1:
+      kind: linux
+      image: ghcr.io/dkhenderson2/capeos-bolt:0.11.0
+      env: { CAPEOS_USER: admin, CAPEOS_PASSWORD: capeos-lab }
+      binds: [configs/r1.cfg:/flash/startup-config:ro]
+    r2:
+      kind: linux
+      image: ghcr.io/dkhenderson2/capeos-bolt:0.11.0
+      env: { CAPEOS_USER: admin, CAPEOS_PASSWORD: capeos-lab }
+      binds: [configs/r2.cfg:/flash/startup-config:ro]
+
+    # The hosts have no management port: like a real computer, eth1 is their only network card.
+    laptop:    { kind: linux, network-mode: none, exec: [start laptop] }
+    printer:   { kind: linux, network-mode: none, exec: [start printer] }
+    broken-pc: { kind: linux, network-mode: none, exec: [start broken-pc] }
+    web:       { kind: linux, network-mode: none, exec: [start web] }
+    dns:
+      kind: linux
+      network-mode: none
+      binds: [dns:/etc/lab-dns:ro]
+      exec: [start dns]
+
+  # Every cable is ordinary Ethernet, 1500 bytes (containerlab's own default is 9500, which no home network
+  # has). Chapter 8 breaks that on purpose.
+  links:
+    - { type: veth, mtu: 1500, endpoints: [{ node: sw1, interface: eth1 }, { node: r1, interface: eth1 }] }
+    - type: veth
+      mtu: 1500
+      endpoints:
+        - { node: sw1, interface: eth2 }
+        - { node: laptop, interface: eth1, mac: "aa:aa:aa:11:11:11" }
+    - type: veth
+      mtu: 1500
+      endpoints:
+        - { node: sw1, interface: eth3 }
+        - { node: printer, interface: eth1, mac: "aa:aa:aa:22:22:22" }
+    - type: veth
+      mtu: 1500
+      endpoints:
+        - { node: sw1, interface: eth4 }
+        - { node: broken-pc, interface: eth1, mac: "aa:aa:aa:33:33:33" }
+    - { type: veth, mtu: 1500, endpoints: [{ node: r1, interface: eth2 }, { node: r2, interface: eth1 }] }
+    - type: veth
+      mtu: 1500
+      endpoints:
+        - { node: r2, interface: eth2 }
+        - { node: web, interface: eth1, mac: "aa:aa:aa:44:44:44" }
+    - type: veth
+      mtu: 1500
+      endpoints:
+        - { node: r2, interface: eth3 }
+        - { node: dns, interface: eth1, mac: "aa:aa:aa:55:55:55" }

@@ -1,0 +1,8 @@
+# Task 8.2 · the mystery fault
+# Write each answer after its colon, save the file, then run:  make check T=8.2
+# The capture: make break X=mystery, then  make capture AT=laptop:eth1,r1:eth2,r2:eth2 NAME=8.2 X=webip
+# Guide: https://networkdoodles.com/labs/wireshark-101/task-8-2/
+
+# Challenge
+broken_router:        # r1 or r2
+cause:                # acl or route

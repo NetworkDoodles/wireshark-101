@@ -1,0 +1,11 @@
+# Task 5.2 · the search domain
+# Write each answer after its colon, save the file, then run:  make check T=5.2
+# The capture: make capture AT=laptop:eth1 NAME=5.2 X=search
+# Guide: https://networkdoodles.com/labs/wireshark-101/task-5-2/
+
+# Follow along
+first_name:           # the first name in a query
+queries:              # every query the one ping caused
+
+# Challenge
+bare_name_rcode:      # the response code for plain nas, like NXDOMAIN

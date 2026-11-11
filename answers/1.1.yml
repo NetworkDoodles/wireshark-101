@@ -1,0 +1,12 @@
+# Task 1.1 · your first capture
+# Write each answer after its colon, save the file, then run:  make check T=1.1
+# The capture: make capture AT=laptop:eth1 NAME=1.1 X=ping
+# Guide: https://networkdoodles.com/labs/wireshark-101/task-1-1/
+
+# Follow along
+first_protocol:     # the protocol of the first frame the laptop sent, like ICMP
+echo_requests:      # how many echo (ping) requests
+
+# Challenge
+printer_mac:        # from the Ethernet header of a reply
+reply_ttl:          # the TTL in the printer's replies

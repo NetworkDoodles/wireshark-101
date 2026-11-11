@@ -1,0 +1,11 @@
+# Task 6.2 · refused
+# Write each answer after its colon, save the file, then run:  make check T=6.2
+# The capture: make capture AT=laptop:eth1 NAME=6.2 X=refused
+# Guide: https://networkdoodles.com/labs/wireshark-101/task-6-2/
+
+# Follow along
+refused_port:
+rst_from:
+
+# Challenge
+refused_stream:       # tcp.stream of the refused connection
