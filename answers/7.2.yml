@@ -4,9 +4,9 @@
 # Guide: https://networkdoodles.com/labs/wireshark-101/task-7-2/
 
 # Follow along
-tls_version:
-cert_cn:              # the name the certificate is for
-cert_issuer:          # who signed it
+tls_version: 1.2
+cert_cn: web.lab             # the name the certificate is for
+cert_issuer: Network Doodles Lab CA # who signed it
 
 # Challenge
-secret:               # the answer in secret.txt, once you've decrypted it
+secret: gentoo-penguin       # the answer in secret.txt, once you've decrypted it
