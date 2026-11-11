@@ -4,9 +4,9 @@
 # Guide: https://networkdoodles.com/labs/wireshark-101/task-5-1/
 
 # Follow along
-web_ip:
-ttl:                  # of web.lab's answer, in seconds
+web_ip: 192.168.2.10
+ttl: 60                      # of web.lab's answer, in seconds
 
 # Challenge
-cname_target:         # the name intranet.lab is an alias for
-nxdomain_name:
+cname_target: web.lab        # the name intranet.lab is an alias for
+nxdomain_name: nas.lab
