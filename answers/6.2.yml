@@ -4,8 +4,8 @@
 # Guide: https://networkdoodles.com/labs/wireshark-101/task-6-2/
 
 # Follow along
-refused_port:
-rst_from:
+refused_port: 8080
+rst_from: 192.168.2.10
 
 # Challenge
-refused_stream:       # tcp.stream of the refused connection
+refused_stream: 1            # tcp.stream of the refused connection
