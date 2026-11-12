@@ -13,10 +13,25 @@
     {"n": 7, "title": "TLS", "tasks": [["7.1", "What TLS shows"], ["7.2", "Decrypt your own"]]},
     {"n": 8, "title": "A broken path", "tasks": [["8.1", "Loss"], ["8.2", "The mystery fault"], ["8.3", "The black hole"]]}
   ],
+  "answers": "answers/{task}.yml",
+  "topology": {
+    "hint": "Click a device to open a terminal on it, in a tab of its own. Hover a device for what it is, or a cable for how to capture on it.",
+    "linkTip": "Capture on this cable: make capture AT={a} NAME=<name> (or AT={b}), in the VS Code tab's terminal",
+    "nodes": [
+      {"id": "laptop", "icon": "laptop", "x": 0, "y": 0, "sub": "your computer", "what": "Your computer, on the home network. Most tasks start here.", "details": [["runs", "Alpine Linux: ip, ping, traceroute, arp, dig, curl"]]},
+      {"id": "printer", "icon": "printer", "x": 0, "y": 170, "sub": "printer", "what": "A network printer, on the same network as the laptop.", "details": [["runs", "Alpine Linux: ip, ping, traceroute, arp, dig, curl"]]},
+      {"id": "broken-pc", "icon": "pc", "x": 0, "y": 340, "sub": "a computer", "what": "Another computer on the home network.", "details": [["runs", "Alpine Linux: ip, ping, traceroute, arp, dig, curl"]]},
+      {"id": "sw1", "icon": "switch", "x": 250, "y": 170, "sub": "switch", "what": "The home network's switch: every computer at home plugs into it.", "details": [["runs", "CapeOS Bolt: a lab network OS with an IOS-style CLI"], ["port names", "ethN is GigabitEthernetN in its CLI"]]},
+      {"id": "r1", "icon": "router", "x": 470, "y": 170, "sub": "router", "what": "The home network's router: its way out to other networks.", "details": [["runs", "CapeOS Bolt: a lab network OS with an IOS-style CLI"], ["port names", "ethN is GigabitEthernetN in its CLI"]]},
+      {"id": "r2", "icon": "router", "x": 690, "y": 170, "sub": "router", "what": "The servers' router, at the far end of the link from r1.", "details": [["runs", "CapeOS Bolt: a lab network OS with an IOS-style CLI"], ["port names", "ethN is GigabitEthernetN in its CLI"]]},
+      {"id": "web", "icon": "server", "x": 920, "y": 80, "sub": "web server", "what": "A web server, on the servers' network: HTTP and HTTPS.", "details": [["runs", "Alpine Linux: ip, ping, traceroute, arp, dig, curl"]]},
+      {"id": "dns", "icon": "server", "x": 920, "y": 260, "sub": "DNS server", "what": "The lab's DNS server, and its DHCP server too.", "details": [["runs", "Alpine Linux: ip, ping, traceroute, arp, dig, curl"]]}
+    ],
+    "links": [["sw1:eth2", "laptop:eth1"], ["sw1:eth3", "printer:eth1"], ["sw1:eth4", "broken-pc:eth1"], ["sw1:eth1", "r1:eth1"], ["r1:eth2", "r2:eth1"], ["r2:eth2", "web:eth1"], ["r2:eth3", "dns:eth1"]]
+  },
   "tabs": [
+    {"id": "topology", "name": "Topology", "kind": "topology"},
     {"id": "code", "name": "VS Code", "path": "/code/", "port": 13337, "strip": true},
-    {"id": "wireshark", "name": "Wireshark", "path": "/wireshark/", "port": 3000, "strip": false,
-     "start": "wireshark", "startLabel": "Start Wireshark",
-     "idle": "Wireshark isn't running. It opens your captures/ and pcaps/ folders under File › Open."}
+    {"id": "wireshark", "name": "Wireshark", "path": "/wireshark/", "port": 3000, "strip": false, "start": "wireshark", "startLabel": "Start Wireshark", "idle": "Wireshark isn't running. It opens your captures/ and pcaps/ folders under File › Open."}
   ]
 }
