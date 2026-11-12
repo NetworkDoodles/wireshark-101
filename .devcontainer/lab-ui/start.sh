@@ -5,7 +5,8 @@
 # already answering it leaves it alone. --restart restarts it anyway (after changing lab-ui.json).
 set -euo pipefail
 HERE="$(cd "$(dirname "$0")" && pwd)"
-RUN="${XDG_RUNTIME_DIR:-/tmp}/lab-ui"
+# Always /tmp: XDG_RUNTIME_DIR differs between the dev container's start commands and a terminal.
+RUN=/tmp/lab-ui
 answering() { curl -fs -o /dev/null --max-time 2 http://127.0.0.1:8000/api/status; }
 if [ "${1:-}" != "--restart" ] && answering; then
   echo "lab app already on port 8000"
