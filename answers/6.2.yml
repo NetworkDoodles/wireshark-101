@@ -4,8 +4,8 @@
 # Guide: https://networkdoodles.com/labs/wireshark-101/task-6-2/
 
 # Follow along
-refused_port:
-rst_from:
+refused_port:         # The port that refused the connection
+rst_from:             # Who sent the reset: its IP address
 
 # Challenge
-refused_stream:       # tcp.stream of the refused connection
+refused_stream:       # The refused connection's stream index, tcp.stream

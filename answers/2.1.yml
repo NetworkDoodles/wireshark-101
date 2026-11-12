@@ -4,10 +4,10 @@
 # Guide: https://networkdoodles.com/labs/wireshark-101/task-2-1/
 
 # Follow along: a display filter after each colon, no quotes needed
-dns:
-printer:
-not_web:
+dns:   # A display filter for only DNS
+printer:   # A display filter for everything to or from the printer, 192.168.1.20
+not_web:   # A display filter for everything except web's traffic, ARP and STP included
 
 # Challenge
-laptop_dns_or_arp:
-syn_only:
+laptop_dns_or_arp:   # A display filter for DNS or ARP sent by the laptop
+syn_only:   # A display filter for only the first packet of each TCP connection

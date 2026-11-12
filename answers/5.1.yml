@@ -4,9 +4,9 @@
 # Guide: https://networkdoodles.com/labs/wireshark-101/task-5-1/
 
 # Follow along
-web_ip:
-ttl:                  # of web.lab's answer, in seconds
+web_ip:               # The IP address of web.lab, from the answer
+ttl:                  # How long web.lab's answer may be cached (its TTL), in seconds
 
 # Challenge
-cname_target:         # the name intranet.lab is an alias for
-nxdomain_name:
+cname_target:         # The name intranet.lab is an alias for
+nxdomain_name:        # The name that doesn't exist

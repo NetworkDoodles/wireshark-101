@@ -4,10 +4,10 @@
 # Guide: https://networkdoodles.com/labs/wireshark-101/task-4-1/
 
 # Follow along: from the Offer
-offered_ip:
-server_id:            # option 54
-lease_seconds:
+offered_ip:           # The IP address offered to the laptop
+server_id:            # The DHCP server's identifier, option 54
+lease_seconds:        # The lease time, in seconds
 
 # Challenge
-router:
-dns_server:
+router:               # The router (default gateway) the server hands out
+dns_server:           # The DNS server it hands out

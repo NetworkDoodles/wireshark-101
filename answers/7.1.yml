@@ -4,9 +4,9 @@
 # Guide: https://networkdoodles.com/labs/wireshark-101/task-7-1/
 
 # Follow along
-sni:                  # both names, separated by a comma
-tls_version:          # the version the server chose, like 1.2
+sni:                  # The server names (SNI) the laptop asked for, both of them, separated by a comma
+tls_version:          # The TLS version the server chose, like 1.2
 
 # Challenge
-cipher:               # its name or its number
-offered_alpn:         # what the laptop offered, separated by commas
+cipher:               # The cipher suite the server chose, by its name or its number
+offered_alpn:         # The application protocols (ALPN) the laptop offered, separated by commas

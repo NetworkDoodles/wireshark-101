@@ -4,8 +4,8 @@
 # Guide: https://networkdoodles.com/labs/wireshark-101/task-8-1/
 
 # Follow along
-retransmissions:
-retransmitted_by:     # the IP address that had to send again
+retransmissions:      # How many retransmissions
+retransmitted_by:     # Who had to send again: the IP address
 
 # Challenge
-dup_acks:
+dup_acks:             # How many duplicate ACKs

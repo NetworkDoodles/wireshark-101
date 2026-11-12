@@ -4,9 +4,9 @@
 # Guide: https://networkdoodles.com/labs/wireshark-101/task-8-3/
 
 # Follow along
-stuck_frame_bytes:    # the frame length of the one that never got an answer
-big_frames_past_switch: # how many of those frames are in the sw1:eth1 copy
+stuck_frame_bytes:    # The size of the frame that never got an answer: its frame length in bytes
+big_frames_past_switch: # How many of them reached r1's side of the switch, in the sw1:eth1 copy
 
 # Challenge
-dropped_by:           # the box that dropped them
-laptop_mtu:
+dropped_by:           # The box that dropped them
+laptop_mtu:           # The laptop's MTU, the cause

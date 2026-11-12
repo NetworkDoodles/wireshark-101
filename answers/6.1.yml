@@ -4,9 +4,9 @@
 # Guide: https://networkdoodles.com/labs/wireshark-101/task-6-1/
 
 # Follow along
-client_port:
-syn_ack_frame:        # its frame number, the No. column
+client_port:          # The laptop's port for the connection (the SYN's source port)
+syn_ack_frame:        # The frame number of the SYN-ACK, from the No. column
 
 # Challenge
-http_status:
-first_fin_from:       # the IP address that sent the first FIN
+http_status:          # The HTTP status code web answered with
+first_fin_from:       # Who closed the connection first: the IP address that sent the first FIN

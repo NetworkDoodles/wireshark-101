@@ -4,9 +4,9 @@
 # Guide: https://networkdoodles.com/labs/wireshark-101/task-4-2/
 
 # Follow along: the Discover
-lan_dst:              # its destination IP on sw1:eth1
-relay_dst:            # its destination IP on r1:eth2
+lan_dst:              # Where the laptop sent its Discover, on the home network (sw1:eth1): its destination IP
+relay_dst:            # Where r1 sent that Discover on, towards r2: its destination IP on r1:eth2
 
 # Challenge
-giaddr:               # the Relay agent IP address in r1's copy
-offer_from:           # the Offer's source IP, on sw1:eth1
+giaddr:               # The relay agent address r1 wrote into it: the Relay agent IP address in r1's copy
+offer_from:           # Who the laptop got its Offer from: the Offer's source IP on sw1:eth1
