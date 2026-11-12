@@ -1,0 +1,22 @@
+{
+  "title": "Wireshark 101",
+  "guide": "https://networkdoodles.com/labs/wireshark-101/",
+  "network": {"name": "ws101", "nodes": 8},
+  "launcher": "https://labs.networkdoodles.com",
+  "chapters": [
+    {"n": 1, "title": "What a capture shows", "tasks": [["1.1", "Your first capture"], ["1.2", "Where you capture"]]},
+    {"n": 2, "title": "Filters", "tasks": [["2.1", "Display filters"], ["2.2", "Capture filters"]]},
+    {"n": 3, "title": "ARP", "tasks": [["3.1", "Who has?"], ["3.2", "Two answers"]]},
+    {"n": 4, "title": "DHCP", "tasks": [["4.1", "DORA"], ["4.2", "The relay"]]},
+    {"n": 5, "title": "DNS", "tasks": [["5.1", "Names and answers"], ["5.2", "The search domain"]]},
+    {"n": 6, "title": "TCP", "tasks": [["6.1", "A whole connection"], ["6.2", "Refused"]]},
+    {"n": 7, "title": "TLS", "tasks": [["7.1", "What TLS shows"], ["7.2", "Decrypt your own"]]},
+    {"n": 8, "title": "A broken path", "tasks": [["8.1", "Loss"], ["8.2", "The mystery fault"], ["8.3", "The black hole"]]}
+  ],
+  "tabs": [
+    {"id": "code", "name": "VS Code", "path": "/code/", "port": 13337, "strip": true},
+    {"id": "wireshark", "name": "Wireshark", "path": "/wireshark/", "port": 3000, "strip": false,
+     "start": "wireshark", "startLabel": "Start Wireshark",
+     "idle": "Wireshark isn't running. It opens your captures/ and pcaps/ folders under File › Open."}
+  ]
+}
