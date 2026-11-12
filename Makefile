@@ -82,8 +82,8 @@ wireshark: docker-ready ## open Wireshark in your browser, with captures/ and pc
 	@mkdir -p captures
 	@docker run -d --name wireshark -p 127.0.0.1:3000:3000 --shm-size 1g -e PUID=$$(id -u) -e PGID=$$(id -g) -e TZ=Etc/UTC \
 	  -e SUBFOLDER=/wireshark/ -v "$(CURDIR)/captures:/captures" -v "$(CURDIR)/pcaps:/pcaps:ro" $(WIRESHARK) >/dev/null
-	@echo "\n  Wireshark is starting. Open the Wireshark tab in the lab app (port 8000: 'Lab' in the PORTS tab,"
-	@echo "  or http://localhost:8000 on a laptop). Your captures are in /captures, the reference ones in /pcaps."
+	@echo "\n  Wireshark is starting: open the Wireshark tab in the lab app (on a laptop, http://localhost:8000)."
+	@echo "  Your captures are in /captures, the reference ones in /pcaps."
 	@echo "  make wireshark-stop closes it.\n"
 
 wireshark-stop: ## close the browser Wireshark
