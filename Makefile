@@ -80,10 +80,10 @@ wireshark: docker-ready ## open Wireshark in your browser, with captures/ and pc
 	@docker rm -f wireshark >/dev/null 2>&1 || true
 	@docker image inspect $(WIRESHARK) >/dev/null 2>&1 || (echo "  pulling Wireshark (about 700 MB, once) ..."; docker pull -q $(WIRESHARK) >/dev/null)
 	@mkdir -p captures
-	@docker run -d --name wireshark -p 3000:3000 --shm-size 1g -e PUID=$$(id -u) -e PGID=$$(id -g) -e TZ=Etc/UTC \
-	  -v "$(CURDIR)/captures:/captures" -v "$(CURDIR)/pcaps:/pcaps:ro" $(WIRESHARK) >/dev/null
-	@echo "\n  Wireshark is starting on port 3000. Open it from the PORTS tab (the globe icon on 'Wireshark'),"
-	@echo "  or on a laptop at http://localhost:3000. Your captures are in /captures, the reference ones in /pcaps."
+	@docker run -d --name wireshark -p 127.0.0.1:3000:3000 --shm-size 1g -e PUID=$$(id -u) -e PGID=$$(id -g) -e TZ=Etc/UTC \
+	  -e SUBFOLDER=/wireshark/ -v "$(CURDIR)/captures:/captures" -v "$(CURDIR)/pcaps:/pcaps:ro" $(WIRESHARK) >/dev/null
+	@echo "\n  Wireshark is starting: open the Wireshark tab in the lab app (on a laptop, http://localhost:8000)."
+	@echo "  Your captures are in /captures, the reference ones in /pcaps."
 	@echo "  make wireshark-stop closes it.\n"
 
 wireshark-stop: ## close the browser Wireshark

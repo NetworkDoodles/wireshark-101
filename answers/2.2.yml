@@ -4,8 +4,8 @@
 # Guide: https://networkdoodles.com/labs/wireshark-101/task-2-2/
 
 # Follow along
-dns_frames: 10               # how many frames the capture filter kept
+dns_frames: 10   # How many frames the capture filter kept
 
 # Challenge: a capture filter (BPF) after each colon
-bpf_https_web: host 192.168.2.10 and tcp port 443
-bpf_laptop_not_arp: ether host aa:aa:aa:11:11:11 and not arp
+bpf_https_web: host 192.168.2.10 and tcp port 443   # A capture filter (BPF): HTTPS to or from web
+bpf_laptop_not_arp: ether host aa:aa:aa:11:11:11 and not arp   # A capture filter (BPF): the laptop's frames, but no ARP

@@ -4,8 +4,8 @@
 # Guide: https://networkdoodles.com/labs/wireshark-101/task-5-2/
 
 # Follow along
-first_name: nas.lab          # the first name in a query
-queries: 6                   # every query the one ping caused
+first_name: nas.lab   # The first name the laptop asked for, in the first query
+queries: 6   # How many queries the one ping caused
 
 # Challenge
-bare_name_rcode: REFUSED     # the response code for plain nas, like NXDOMAIN
+bare_name_rcode: REFUSED   # The response code the server gave for plain nas, a name like NXDOMAIN or a number

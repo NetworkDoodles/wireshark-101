@@ -4,9 +4,9 @@
 # Guide: https://networkdoodles.com/labs/wireshark-101/task-3-1/
 
 # Follow along
-printer_mac: aa:aa:aa:22:22:22
-request_dst_mac: ff:ff:ff:ff:ff:ff # the destination MAC of the laptop's ARP request
+printer_mac: aa:aa:aa:22:22:22   # The printer's MAC address, from its ARP reply
+request_dst_mac: ff:ff:ff:ff:ff:ff   # Where the laptop's ARP request was sent: its destination MAC
 
 # Challenge
-asked_for_web: 192.168.1.1   # the IP address the laptop asked ARP about, to reach web
-gateway_mac: aa:c1:ab:d8:b6:be
+asked_for_web: 192.168.1.1   # The IP address the laptop asked ARP about, to reach web
+gateway_mac: aa:c1:ab:d8:b6:be   # That address's MAC, from the ARP reply

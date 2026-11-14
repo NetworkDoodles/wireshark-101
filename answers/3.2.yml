@@ -4,8 +4,8 @@
 # Guide: https://networkdoodles.com/labs/wireshark-101/task-3-2/
 
 # Follow along
-duplicate_ip: 192.168.1.20
-impostor_mac: aa:aa:aa:33:33:33 # the MAC address that answered and isn't the printer's
+duplicate_ip: 192.168.1.20   # The IP address two computers claimed
+impostor_mac: aa:aa:aa:33:33:33   # The MAC address that answered and isn't the printer's
 
 # Challenge
-gratuitous_mac: aa:aa:aa:33:33:33 # who announced the address without being asked
+gratuitous_mac: aa:aa:aa:33:33:33   # Who sent the gratuitous ARP, as a MAC address

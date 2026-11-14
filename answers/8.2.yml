@@ -4,5 +4,5 @@
 # Guide: https://networkdoodles.com/labs/wireshark-101/task-8-2/
 
 # Challenge
-broken_router: r2            # r1 or r2
-cause: acl                   # acl or route
+broken_router: r2   # The router where the packets stop: r1 or r2
+cause: acl   # The cause: acl (a filter drops them) or route (no way back)

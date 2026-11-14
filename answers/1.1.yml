@@ -4,9 +4,9 @@
 # Guide: https://networkdoodles.com/labs/wireshark-101/task-1-1/
 
 # Follow along
-first_protocol: arp          # the protocol of the first frame the laptop sent, like ICMP
-echo_requests: 4             # how many echo (ping) requests
+first_protocol: arp   # The protocol of the first frame the laptop sent, like ICMP
+echo_requests: 4   # How many echo (ping) requests the laptop sent
 
 # Challenge
-printer_mac: aa:aa:aa:22:22:22 # from the Ethernet header of a reply
-reply_ttl: 64                # the TTL in the printer's replies
+printer_mac: aa:aa:aa:22:22:22   # The printer's MAC address, from the Ethernet header of a reply
+reply_ttl: 64   # The TTL in the printer's replies

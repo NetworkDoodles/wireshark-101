@@ -4,10 +4,10 @@
 # Guide: https://networkdoodles.com/labs/wireshark-101/task-2-1/
 
 # Follow along: a display filter after each colon, no quotes needed
-dns: dns
-printer: ip.addr == 192.168.1.20
-not_web: !(ip.addr == 192.168.2.10)
+dns: dns   # A display filter for only DNS
+printer: ip.addr == 192.168.1.20   # A display filter for everything to or from the printer, 192.168.1.20
+not_web: !(ip.addr == 192.168.2.10)   # A display filter for everything except web's traffic, ARP and STP included
 
 # Challenge
-laptop_dns_or_arp: (dns || arp) && eth.src == aa:aa:aa:11:11:11
-syn_only: tcp.flags.syn == 1 && tcp.flags.ack == 0
+laptop_dns_or_arp: (dns || arp) && eth.src == aa:aa:aa:11:11:11   # A display filter for DNS or ARP sent by the laptop
+syn_only: tcp.flags.syn == 1 && tcp.flags.ack == 0   # A display filter for only the first packet of each TCP connection
