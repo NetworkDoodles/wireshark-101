@@ -7,7 +7,7 @@
 VENV ?= .venv
 PY := $(VENV)/bin/python
 TOPO := lab/topology.clab.yml
-BOLT := ghcr.io/dkhenderson2/capeos-bolt:0.11.0
+BOLT := ghcr.io/dkhenderson2/capeos-bolt:0.11.2
 HOST := nd-wshost:1
 SHARK := nd-shark:1
 WIRESHARK := lscr.io/linuxserver/wireshark:4.6.9
